@@ -3,16 +3,33 @@
 
 class Basket {
     constructor() {
-        this.items = [];
-        this.totalValue = 0;
+        // this.totalValue = 0;
+
+        // z localstorage
+        // this.items = this.loadFromLocalStorage();
+        // inaczej
+        // const ls = this.loadFromLocalStorage()
+        // this.items = ls ? ls : [];
+        // lub
+        // const ls = this.loadFromLocalStorage()
+        // this.items = ls || [];
+        // lub, czy wartość jest falsowa
+        // this.items = this.loadFromLocalStorage() || [];
+        // lub, czy wartość jest nulowa, nulisz operator
+        this.items = this.loadFromLocalStorage() ?? [];
+
+
+
     }
 
     clear() {
         this.items.length = 0;
+        this.saveToLocalStorage();
     }
 
     add(item) {
         this.items.push(item);
+        this.saveToLocalStorage();
         // this.addTotalValue(item.price);
     }
 
@@ -36,6 +53,23 @@ class Basket {
 
     remove(no) {
         this.items.splice(no - 1, 1);
+        this.saveToLocalStorage();
+    }
+
+    saveToLocalStorage() {
+        localStorage.setItem('basket-items', JSON.stringify(this.items));
+    }
+
+    loadFromLocalStorage() {
+        // const itemJson = localStorage.getItem('basket-items');
+        // if (itemJson === null) {
+        //     return []; // jeśli nic nie ma w localstoragu
+        // } else {
+        //     return JSON.parse(itemJson);
+        // }
+
+        // inaczej, zmiana też w construktorze
+        return JSON.parse(localStorage.getItem('basket-items')); // jeśli sparsujemy nulla to z powrotem dostaniemy nulla
     }
 
 }

@@ -56,3 +56,5 @@ buyAllBtn.addEventListener('click', buyAllProducts);
 // buyBtns.forEach(el => el.addEventListener('click', (e) => {
 //     console.log(e.target.dataset.id)
 // }))
+
+createBasketUi();
