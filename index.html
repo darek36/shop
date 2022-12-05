@@ -9,36 +9,51 @@
 
 </head>
 <body>
+<div class="w-screen h-screen   flex flex-col  items-center bg-slate-300 ">
+    <div class="flex  h-20 w-screen bg-zinc-400 2xl:bg-transparent justify-center items-center font-bold text-sm md:text-xl p-2 md:p-4 2xl:p-16 text-center  min-[900px]:text-3xl">Object Oriented Programming Schop + Localstorage</div>
+    <div class="flex flex-col lg:flex-row  2xl:h-5/6 2xl:justify-center  w-screen  lg:overflow-hidden ">
 
-<section class="products p-24 max-w-xl mx-auto bg-white rounded-xl shadow-lg flex-row">
-    <h1 class="flex pb-4 justify-center text-2xl">Lista produktów</h1>
-    <ul class="products-list flex-row">
-        <li class="flex items-center pb-2">
-            <p class="text-xl font-bold">Ogórki kiszone</p><p class="px-2">- 9.99</p><button class="btn-buy-product bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-name="Ogórki kiszone" data-price="9.99">Kup!</button>
-        </li>
-        <li  class="flex items-center pb-2">
-            <p class="text-xl font-bold">Pomidorki</p><p class="px-2"> - 7.50 </p><button class="btn-buy-product bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-name="Pomidorki" data-price="7.5">Kup!</button>
-        </li>
-        <li  class="flex items-center pb-2">
-            <p class="text-xl font-bold">Mercedes C Klasa</p><p class="px-2"> - 109000.00 </p><button class="btn-buy-product bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-name="Mercedes C Klasa" data-price="109000.00">Kup!</button>
-        </li>
-    </ul>
-</section>
+        <section class="products  p-4 md:p-6 w-screen 2xl:w-1/4  mx-auto bg-blue-300 2xl:bg-blue-300 shadow-lg flex-row overflow-hidden lg:overflow-scroll scrollbar-hide 2xl:rounded-lg ">
+            <h1 class="flex pb-2 md:pb-6 justify-center text-lg md:text-2xl min-[900px]:text-3xl lg:text-xl 2xl:text-2xl tracking-wider">Products List</h1>
+            <ul class="products-list  scroll-auto">
+                <li class="flex justify-between  items-center p-2 md:py-4 mb-2 md:mb-4  border border-2 border-gray-800 bg-zinc-100 2xl:bg-blue-100 2xl:hover:bg-blue-50">
+                   <div class="flex  items-center text-sm md:text-xl flex-wrap  min-[900px]:text-3xl lg:text-xl"> <p class=" font-bold">Cucumber</p><p class="px-2">- 9.93 &euro;</p></div><button class=" btn-buy-product bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 h-4/5 rounded md:text-xl  min-[900px]:text-3xl lg:text-xl" data-name="Cucumber" data-price="9.99">Buy!</button>
+                </li>
+                <li  class="flex justify-between  items-center p-2 md:py-4 mb-2 md:mb-4  border border-2 border-gray-800 bg-zinc-100 2xl:bg-blue-100 2xl:hover:bg-blue-50">
+                    <div class="flex items-center text-sm md:text-xl flex-wrap  min-[900px]:text-3xl lg:text-xl"><p class="font-bold">Tomato</p><p class="px-2"> - 7.50  &euro;</p></div><button class=" btn-buy-product bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  h-4/5 rounded md:text-xl  min-[900px]:text-3xl lg:text-xl" data-name="Tomato" data-price="7.5">Buy!</button>
+                </li>
+                <li  class="flex justify-between  items-center p-2 md:py-4 mb-2 md:mb-4  border border-2 border-gray-800 bg-zinc-100 2xl:bg-blue-100 2xl:hover:bg-blue-50">
+                    <div class="flex items-center  text-sm md:text-xl flex-wrap min-[900px]:text-3xl lg:text-xl"><p class="font-bold">Mercedes C class</p><p class="px-2"> - 10900888880.00  &euro;</p></div><button class="btn-buy-product bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 h-4/5 rounded md:text-xl min-[900px]:text-3xl lg:text-xl" data-name="Mercedes C class" data-price="109000.00">Buy!</button>
+                </li>
+            </ul>
+        </section>
 
-<section class="basket products p-24 max-w-xl mx-auto bg-white rounded-xl shadow-lg flex-row">
-    <h1>Koszyk</h1>
-    <ul class="basket-list"></ul>
-    <button class="btn-buy-all bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" disabled>Złóż zamówienie</button>
-</section>
+        <section class="basket products  p-4 w-screen  2xl:w-1/4   bg-zinc-300 2xl:bg-blue-300 shadow-lg flex-col justify-center md:text-2xl  overflow-hidden lg:overflow-scroll scrollbar-hide 2xl:rounded-lg">
+            <h1 class="flex pb-2 md:pb-6 justify-center text-lg  md:text-2xl min-[900px]:text-3xl lg:text-xl 2xl:text-2xl tracking-wider">Basket</h1>
+            <ul class="basket-list flex flex-col "></ul>
+            <div class="order-information"></div>
+            <div class="flex flex-col justify-center"><button class="btn-buy-all bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 h-4/5 rounded md:text-xl min-[900px]:text-3xl lg:text-xl" disabled>Złóż zamówienie</button></div>
 
-<section class="admin-add-product products p-24 max-w-xl mx-auto bg-white rounded-xl shadow-lg flex-row">
-    <h1>Administracja: dodaj produkt</h1>
-    <form class="form-add-product">
-        <input type="text" name="product-name" placeholder="Podaj nazwę" required>
-        <input type="number" name="product-price" placeholder="Podaj cenę">
-        <input type="submit " value="Dodaj">
-    </form>
-</section>
+        </section>
+
+        <section class="admin-add-product products  p-4 w-screen   2xl:w-1/4  mx-auto bg-blue-300  shadow-lg flex-row  2xl:rounded-lg ">
+            <h1 class="flex justify-center p-2 md:pb-6 md:text-2xl min-[900px]:text-3xl lg:text-xl">Administration: add a product</h1>
+            <form class="form-add-product mb-2 h-fit">
+                <input class="flex w-full p-3 md:p-6 md:text-2xl min-[900px]:text-3xl lg:text-xl mb-2 border border-2 border-gray-800 bg-gray-100" type="text" name="product-name" placeholder="name" required >
+
+                <input class="flex w-full p-3 md:p-6 md:text-2xl min-[900px]:text-3xl lg:text-xl mb-2  border border-2 border-gray-800 bg-gray-100" type="number" name="product-price" placeholder="price" />
+                <!--        <input type="submit " value="Dodaj">-->
+                <button type="submit" class="flex w-full justify-center items-center bg-blue-500 hover:bg-blue-700 text-white md:text-2xl min-[900px]:text-3xl lg:text-xl md:h-16 font-bold py-2 px-4 mb-2 rounded" >Add Product</button>
+            </form>
+            <button type="submit" class="clearList flex w-full justify-center items-center bg-blue-500 hover:bg-blue-700 text-white md:text-2xl min-[900px]:text-3xl lg:text-xl font-bold  md:h-16   py-2 px-4 mb-2 rounded" >Clear Products List</button>
+            <div class="messageValidation  flex flex-col  place-content-center text-center h-16 border border-black text-sm md:text-2xl min-[900px]:text-3xl lg:text-xl p-2 bg-gray-100">Messages for administration support: </div>
+        </section>
+
+    </div>
+
+</div>
+
+
 
 
 <script src="srcJsHtml/basket.js"></script>

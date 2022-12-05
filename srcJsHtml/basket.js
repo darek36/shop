@@ -25,12 +25,14 @@ class Basket {
     clear() {
         this.items.length = 0;
         this.saveToLocalStorage();
+
     }
 
     add(item) {
         this.items.push(item);
         this.saveToLocalStorage();
         // this.addTotalValue(item.price);
+
     }
 
     // addTotalValue(newPrice) {
@@ -42,11 +44,14 @@ class Basket {
     }
 
     getBasketSummary() {
+
         return this.items
             .map((product, i) => {
                 return {
+
                     id: i + 1,
-                    text: `${i + 1} - ${product.name} - ${product.price.toFixed(2)} zł`,
+                    textName: `${i + 1} - ${product.name}`,
+                    textPrice:  ` - ${product.price.toFixed(2)} \u20ac`
                 }
             });
     }
@@ -54,10 +59,12 @@ class Basket {
     remove(no) {
         this.items.splice(no - 1, 1);
         this.saveToLocalStorage();
+
     }
 
     saveToLocalStorage() {
         localStorage.setItem('basket-items', JSON.stringify(this.items));
+
     }
 
     loadFromLocalStorage() {
@@ -70,7 +77,9 @@ class Basket {
 
         // inaczej, zmiana też w construktorze
         return JSON.parse(localStorage.getItem('basket-items')); // jeśli sparsujemy nulla to z powrotem dostaniemy nulla
+
     }
+
 
 }
 
